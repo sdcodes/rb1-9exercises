@@ -1,6 +1,6 @@
 def average(array)
   array_sum = array.sum
-  array_sum.to_i / array.length
+  array_sum.to_f / array.length
 end 
 
 puts average([1, 6]) == 3
