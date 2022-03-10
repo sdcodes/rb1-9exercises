@@ -1,18 +1,24 @@
 def stringy(integer)
-  string = []
-  
-  integer.times do |count|
-    string = index.even? 1 : 0
-    number << number
+  string = "1"
+
+  loop do 
+    string << "0"
+    break if string.length == integer
+    string << "1"
+    break if string.length == integer
   end 
   
-  number.join    
+  string
 end 
-  
-  
-# input: integer
-#output: boolean
-#integer is size/length of string
-#string is made up of 1 + 0
-#loop through 1 and 0 until reach length of integer
 
+puts stringy(6) == '101010'
+puts stringy(9) == '101010101'
+puts stringy(4) == '1010'
+puts stringy(7) == '1010101'
+
+
+#input: positive integer
+#string - of 1s and 0s equal in length to integer
+#receive integer
+#loop to add 1 + 0 to string
+#stop when length of string = integer
