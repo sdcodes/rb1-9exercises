@@ -1,10 +1,9 @@
 def running_total(array) #[ 2, 5, 13 ] 
-  index = 0
+  sum = 0
   
   array.map do |number|
-    array << number + number[index] 
+    sum += number
   end
-
 end 
   
 p running_total([2, 5, 13])
