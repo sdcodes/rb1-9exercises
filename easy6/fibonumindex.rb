@@ -3,15 +3,12 @@
 # output: integer - index number of input
 # 
 
-
+def find_fibonacci_index_by_length(num_of_digits)
+  
+  num_of_digits == fibonacci(number).to_s.size
 
 def fibonacci(number)
-  if number < 2
-    number
-  else
     fibonacci(number - 1) + fibonacci(number - 2)
-  end
-  number.index
 end
 
-puts fibonacci(5)
+
