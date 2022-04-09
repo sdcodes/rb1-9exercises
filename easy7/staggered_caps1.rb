@@ -1,0 +1,2 @@
+UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXZY"
+LOWERCASE = "abcdefghijklmnopqrstuvwxyz"
