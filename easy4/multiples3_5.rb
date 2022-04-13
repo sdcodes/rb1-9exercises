@@ -1,16 +1,15 @@
-def modulo_multiply (num, divisor)
-  num % divisor == 0
-end 
-
-def multisum(max_num)
-  total_array = []
-  1.upto(max_num) do |n| 
-    if modulo_multiply(n, 3) || modulo_multiply(n, 5)
-      total_array << n
+#REWORKED ON PROBLEM AND PROVIDED SHORTER SOLUTION BELOW:
+def multisum(integer)
+  new_array = []
+  1.upto(integer) do |i|
+    if i % 3 == 0 || i % 5 == 0
+      new_array << i
     end 
   end 
-  total_array.sum
+  new_array.sum
 end 
+
+#ABOVE WORKED ON 4/12/22
 
 p multisum(3) 
 p multisum(5) 

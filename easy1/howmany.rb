@@ -1,17 +1,20 @@
-def count_occurrences(item)
- item.map do |individual| 
-  if individual.eql?(individual)
-    
-
-end
-
 vehicles = [
   'car', 'car', 'truck', 'car', 'SUV', 'truck',
   'motorcycle', 'motorcycle', 'car', 'truck'
 ]
 
+def counting(array)
+  hash = {}
+array.each do |item|
+  hash[item] = array.count(item)
+end 
+hash
+end 
+  
+def count_occurrences(array)
+  counting(array).each_pair do |type, num|
+    puts "#{type} => #{num}"
+  end 
+end 
 
-
-#have array with list
-#need to find similarities
-#group per similarity and count how many there are
+ count_occurrences(vehicles) 
