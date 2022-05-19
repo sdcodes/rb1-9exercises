@@ -18,3 +18,17 @@ def count_occurrences(array)
 end 
 
  count_occurrences(vehicles) 
+ 
+ #ANOTHER WAY
+ 
+ def count_occurrences(array)
+  new_hash = {}
+  array.each do |item|
+    if new_hash.key?(item)
+      new_hash[item] += 1
+    else
+      new_hash[item] = 1
+    end 
+  end 
+  new_hash.each_pair {|k, v| puts "#{k} => #{v}" }
+end 

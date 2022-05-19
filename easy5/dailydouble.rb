@@ -1,6 +1,3 @@
-require "pry"
-
-
 
 def crunch(string)
   new_string = ""
@@ -10,8 +7,21 @@ def crunch(string)
       index += 1
     end
   new_string
-
 end 
+
+# OR OTHER METHOD
+
+def crunch(string)
+  new_string = ""
+  string.chars.each_with_index do |ch, index|
+    if index == 0
+       new_string << ch
+    elsif ch != string.chars[index - 1]
+      new_string << ch
+    end 
+  end
+  new_string
+end
 
 p crunch('ddaaiillyy ddoouubbllee') == 'daily double'
 p crunch('4444abcabccba') == '4abcabcba'

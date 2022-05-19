@@ -40,3 +40,13 @@ p evens([])
 #target the indexes of the array. 
 #if index is even, push into new array
 #return new array
+
+#OTHER WAY
+
+def oddities(array)
+  new_array = []
+  array.each_with_index do |num, index|
+    new_array << num if index.even?
+  end 
+  new_array
+end

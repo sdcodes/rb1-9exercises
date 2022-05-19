@@ -22,3 +22,18 @@ p word_sizes('Four score and seven.')
 p word_sizes('Hey diddle diddle, the cat and the fiddle!')
 p word_sizes("What's up doc?")
 p word_sizes('') 
+
+# OR METHOD
+
+def word_sizes(string)
+  array_words = string.split
+  new_hash = {}
+  array_words.each do |word|
+    if new_hash.key?(word.size)
+      new_hash[word.size] += 1
+    else
+      new_hash[word.size] = 1
+    end 
+  end 
+  new_hash
+end 

@@ -1,19 +1,15 @@
 words =  ['demo', 'none', 'tied', 'evil', 'dome', 'mode', 'live',
           'fowl', 'veil', 'wolf', 'diet', 'vile', 'edit', 'tide',
-          'flow', 'neon']
-          
-result = {}
+          'flow', 'neon'] 
 
-words.each do |word|
-  key = word.split('').sort.join
-  if result.has_key?(key)
-    result[key].push(word)
-  else
-    result[key] = [word]
-  end 
-end 
+anagram_h = {}
 
-result.each_value do |v|
-  puts "-----"
-  p v
+words.each do | word|
+  key = word.chars.sort.join
+  if anagram_h.key?(key)
+    anagram_h[key] << word
+  else anagram_h[key] = [word]
 end 
+end
+
+p anagram_h.values

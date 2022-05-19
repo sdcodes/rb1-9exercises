@@ -26,5 +26,17 @@ p real_palindrome?('123ab321')
 #remove any spaces, remove any non-alphanumeric characters
 #then compare reverse to original 
 
+# OR OTHER WAY
 
+def palindrome?(string)
+  string == string.reverse
+end 
 
+def real_palindrome?(string)
+  new_array = string.chars
+  alphanumeric = "abcdefghijklmnopqrstuvwxyz1234567890"
+  new_array.select! do |char|
+    alphanumeric.include?(char.downcase)
+  end 
+  palindrome?(new_array.join.downcase)
+end 

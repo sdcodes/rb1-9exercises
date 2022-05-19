@@ -20,3 +20,18 @@ new_string.squeeze(" ")
 end 
 
 p cleanup("---what's my +*& line?")
+
+#OR LIKE BELOW 
+
+def cleanup(string)
+  alphabet = "abcdefghijklmnopqrstuvwxyz"
+  new_sentence = ""
+  string.chars do |ch|
+    if alphabet.include?(ch)
+      new_sentence << ch
+    else
+      new_sentence << " " unless new_sentence.end_with?(" ")
+    end
+  end
+  new_sentence
+end 

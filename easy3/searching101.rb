@@ -31,3 +31,36 @@ end
 #receive 5 numbers
 #have the five numbers added to array
 #check to see if array includes the 6th number
+
+# OR 
+
+all_num = [] 
+
+puts "Enter the 1st number:"
+first_num = gets.chomp.to_i
+all_num << first_num
+
+puts "Enter the 2nd number:"
+second_num = gets.chomp.to_i 
+all_num << second_num
+
+puts "Enter the 3rd number:"
+third_num = gets.chomp.to_i
+all_num << third_num
+
+puts "Enter the 4th number:"
+fourth_num = gets.chomp.to_i
+all_num << fourth_num
+
+puts "Enter the 5th number:"
+fifth_num = gets.chomp.to_i
+all_num << fifth_num
+
+puts "Enter the last number:"
+last_num = gets.chomp.to_i
+
+if all_num.include?(last_num)
+  puts "The number #{last_num} appears in #{all_num}."
+else
+  puts "The number #{last_num} does not appear in #{all_num}."
+end

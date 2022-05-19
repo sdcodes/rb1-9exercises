@@ -10,6 +10,25 @@ def word_sizes(string)
      end
   new_hash
 end 
+
+#OR METHOD BELOW
+
+def word_sizes(string)
+  alphabet = "abcdefghijklmnopqrstuvwxyz "
+  new_hash = {}
+  new_sentence = ""
+  string.each_char do |ch|
+    new_sentence << ch if alphabet.include?(ch.downcase) || ch == " "
+  end
+  new_sentence.split.each do |word|
+  if new_hash.key?(word.size)
+      new_hash[word.size] += 1
+    else
+      new_hash[word.size] = 1
+    end 
+  end 
+  new_hash
+end 
   
 p word_sizes('Four score and seven.')
 p word_sizes('Hey diddle diddle, the cat and the fiddle!')
