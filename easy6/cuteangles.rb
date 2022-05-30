@@ -50,3 +50,19 @@ puts dms(360) == %(360°00'00") || dms(360) == %(0°00'00")
 # break down number. number before decimal becomes degrees
 # num after decimal multiple by 60. integer becomes minutes. if remainder 
 # remainder multipled by 60 becomes seconds
+
+# OR OTHER WAY:
+
+DEGREE = "\xC2\xB0"
+MINUTE_SIGN = "'"
+SECOND_SIGN = '"'
+
+def dms(number)
+  d_arr = number.divmod(1)
+   d_arr[1] *= 60
+   d_arr[1] = d_arr[1].divmod(1)
+   d_arr[1][1] = (d_arr[1][1] * 60).to_i
+   d_arr.flatten!
+   "#{d_arr[0]}" + DEGREE + sprintf("%02d", "#{d_arr[1]}") + MINUTE_SIGN + sprintf("%02d", "#{d_arr[2]}") + SECOND_SIGN
+end 
+#

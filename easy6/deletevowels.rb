@@ -1,4 +1,4 @@
-require "pry"
+
 def remove_vowels(array)
   array.map do |string|
     string.delete("aeiouAEIOU")

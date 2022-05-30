@@ -30,3 +30,17 @@ p interleave_w_zip([1, 2, 3], ['a', 'b', 'c'])
 # iterate over arr1. make each element odd.index of new array
 # iterate over arr2. make each element even.index of new array
 # return new array
+
+# OTHER METHOD
+
+def interleave(arr1, arr2)
+  index = 0
+  new_array = []
+  loop do 
+    new_array << arr1[index]
+    new_array << arr2[index]
+    index += 1
+    break if index == arr1.size
+  end 
+new_array
+end 

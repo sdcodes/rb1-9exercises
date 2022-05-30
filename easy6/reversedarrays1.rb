@@ -1,5 +1,3 @@
-
-
 def reverse!(list)
   new_array = []
   index = -1
@@ -33,4 +31,20 @@ p list == [] # true
 #output: same array, mutated
 #revser elements w/ using reverse method
 #iterage through array 
-#
+
+
+# OR METHOD
+
+def reversed!(array)
+  ind = -2
+  if array.size <= 2
+    array 
+  else
+    loop do 
+      array.push(array.delete_at(ind))
+      ind -= 1
+      break if (-ind) > array.size
+    end
+  end 
+  array
+end 

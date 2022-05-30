@@ -10,6 +10,7 @@ end
  triangle(5)
  triangle(9)
 
+
 #input: positive integer
 #outpout: strings that show triangle
 # in triangle: first line should have one star, each line, star.count increases 
@@ -21,3 +22,15 @@ end
 #   ***
 # ****
 # *****
+
+
+#OR METHOD:
+
+def triangle(integer)
+  tri = "*"
+  index = 1
+  integer.times do
+    puts (tri * index).rjust(integer)
+    index += 1
+  end 
+end 

@@ -15,4 +15,19 @@ def multiply_all_pairs(arr1, arr2)
   new_array.sort
 end 
 
+#OR OTHER METHOD
+
+def multiply_all_pairs(arr1, arr2)
+  new_array = []
+  index = 0
+  loop do 
+    arr2.each do |item|
+      new_array << arr1[index] * item
+    end 
+    index += 1
+    break if arr1.size == index
+  end 
+  new_array.sort
+end 
+
 p multiply_all_pairs([2, 4], [4, 3, 1, 2]) == [2, 4, 4, 6, 8, 8, 12, 16]

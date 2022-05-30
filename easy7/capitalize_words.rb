@@ -16,3 +16,12 @@ p word_cap('this is a "quoted" word') #== 'This Is A "quoted" Word'
 # can split string by space. 
 # iterate through array. capitalize through words. join words again into string
 # return string. 
+
+#OR OTHER METHOD
+
+def word_cap(string)
+  new_sentence = string.split.map do |word|
+    word.capitalize
+  end
+  new_sentence.join(" ")
+end 

@@ -2,6 +2,12 @@ def does_include?(array, value)
   items_in_array = array.select {|item| item == value }
   items_in_array.empty? ? false : true
 end 
+
+# OR OTHER WAY
+
+def included?(array, value)
+  array.any? {|item| item == value}
+end 
   
 p does_include?([1,2,3,4,5], 3) == true
 p does_include?([1,2,3,4,5], 6) == false

@@ -17,3 +17,18 @@ p swap_case('Tonight on XYZ-TV') == 'tONIGHT ON xyz-tv'
 # output: new string w/ cases swapped throughout
 # iterate through string. if statement: if letter included in a..z, capitalize else, lowercase
 #return new string
+
+#OR METHOD 
+
+def swapcase(string)
+  sentence = string.chars.map do |ch|
+    if /[a..z]/.match?(ch)
+      ch.upcase
+    elsif /[A..Z]/.match?(ch)
+      ch.downcase
+    else
+      ch
+    end 
+  end
+  sentence.join()
+end 
