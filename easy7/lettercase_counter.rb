@@ -13,6 +13,22 @@ def letter_case_count(string)
   new_hash
 end 
 
+# OR 
+
+def letter_case_count(original_string)
+  count_hash = { lowercase: 0, uppercase: 0, neither: 0 }
+  original_string.each_char do |ch|
+    if /[a-z]/.match?(ch)
+      count_hash[:lowercase] += 1
+    elsif /[A-Z]/.match?(ch)
+      count_hash[:uppercase] += 1
+    else
+      count_hash[:neither] += 1
+    end 
+  end 
+  count_hash
+end 
+
 p letter_case_count('abCdef 123') == { lowercase: 5, uppercase: 1, neither: 4 }
 p letter_case_count('AbCd +Ef') == { lowercase: 3, uppercase: 3, neither: 2 }
 p letter_case_count('123') == { lowercase: 0, uppercase: 0, neither: 3 }

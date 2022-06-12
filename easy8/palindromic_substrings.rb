@@ -31,6 +31,15 @@ def palindromes(string)
   end 
 end 
 
+#OTHER WAY
+
+def palindromes(original_string)
+  all_substrings = substrings(original_string)
+  all_substrings.select do |substring|
+     substring == substring.reverse && substring.size > 1
+  end
+end
+
 p palindromes('abcd') == []
 p palindromes('madam') == ['madam', 'ada']
 p palindromes('hello-madam-did-madam-goodbye') == [

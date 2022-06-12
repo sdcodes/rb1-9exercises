@@ -8,6 +8,16 @@ end
 def included?(array, value)
   array.any? {|item| item == value}
 end 
+
+# OTHER WAY
+
+def include?(original_array, value)
+  includes = nil
+  original_array.each do |num|
+   includes = true if num == value
+  end 
+  includes == true ? true : false
+end 
   
 p does_include?([1,2,3,4,5], 3) == true
 p does_include?([1,2,3,4,5], 6) == false

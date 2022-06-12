@@ -38,6 +38,36 @@ century_string << "th"
 end 
 end 
 
+# OTHER WAY
+
+def ending_of_century(year)
+  stringed_year = year.to_s
+  if stringed_year.end_with?("11") || stringed_year.end_with?("12") || stringed_year.end_with?("13")
+    stringed_year + "th"
+  elsif stringed_year.end_with?("1")
+    stringed_year + "st"
+  elsif stringed_year.end_with?("2")
+    stringed_year + "nd"
+  elsif stringed_year.end_with?("3")
+    stringed_year + "rd"
+  else 
+    stringed_year + "th"
+  end
+end 
+  
+
+def century(year)
+  stringed_year = year.to_s
+  if year < 100
+    century = 1
+  elsif stringed_year[-2..-1].to_i ==  00
+    century = stringed_year[0..-3].to_i
+  elsif stringed_year[-2..-1].to_i >= 1
+    century = (stringed_year[0..-3].to_i + 1)
+  end 
+  ending_of_century(century)
+end 
+
 p century(2000) 
 p century(2001) 
 p century(1965) 

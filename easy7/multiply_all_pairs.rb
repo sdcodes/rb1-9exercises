@@ -30,4 +30,14 @@ def multiply_all_pairs(arr1, arr2)
   new_array.sort
 end 
 
+#OTHER WAY
+
+def multiply_all_pairs(array1, array2)
+  combos = array1.product(array2)
+  combos.map! do |subarray|
+    subarray.inject(:*)
+  end 
+  combos.sort
+end 
+
 p multiply_all_pairs([2, 4], [4, 3, 1, 2]) == [2, 4, 4, 6, 8, 8, 12, 16]

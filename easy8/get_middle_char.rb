@@ -9,6 +9,20 @@ def center_of(string)
   end 
 end 
 
+
+#OTHER WAY
+
+def center_of(original_string)
+  middle_chs = 0
+  if original_string.size.odd?
+    middle_chs += (original_string.size / 2)
+    original_string[middle_chs]
+  else 
+    middle_chs += (original_string.size / 2) - 1
+    original_string[middle_chs, 2]
+  end 
+end
+
 p center_of('I love ruby') == 'e'
 p center_of('Launch School') == ' '
 p center_of('Launch') == 'un'

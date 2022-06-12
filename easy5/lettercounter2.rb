@@ -29,6 +29,24 @@ def word_sizes(string)
   end 
   new_hash
 end 
+
+# OTHER WAY
+
+def word_sizes(original_string)
+  count_hash = {}
+  alpha_string = []
+  original_string.chars do |ch|
+    alpha_string << ch if /[[:alpha:]]/.match?(ch) || ch == " "
+  end 
+  alpha_string.join.split(" ") do |word|
+    if count_hash.include?(word.size)
+      count_hash[word.size] += 1
+    else
+      count_hash[word.size] = 1
+    end
+  end 
+  count_hash
+end 
   
 p word_sizes('Four score and seven.')
 p word_sizes('Hey diddle diddle, the cat and the fiddle!')

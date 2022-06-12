@@ -8,6 +8,20 @@ def find_dup(array)
     num += 1
   end 
 end 
+
+#OTHER WAY
+
+def find_dup(original_array)
+  comparison_dump_array = []
+  original_array.each do |num|
+    if comparison_dump_array.include?(num)
+      return num
+    else 
+      comparison_dump_array << num
+    end 
+  end 
+end 
+
     
 p find_dup([1, 5, 3, 1])
 p find_dup([18,  9, 36, 96, 31, 19, 73, 54, 75, 73, 42, 15,

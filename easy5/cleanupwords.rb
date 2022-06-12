@@ -35,3 +35,26 @@ def cleanup(string)
   end
   new_sentence
 end 
+
+# OR OTHER WAY
+
+def cleanup(cluttered_string)
+  alphabet_and_space = "abcdefghijklmnopqrstuvwxyz "
+  new_word = ""
+  clean_word = ""
+cluttered_string.each_char do |ch|
+    if alphabet_and_space.include?(ch) 
+      new_word << ch
+    else
+      new_word << " "
+    end
+  end 
+  new_word.chars.each_with_index do |ch, index|
+    if ch == " " && new_word[index + 1] == " "
+      next
+    else 
+      clean_word << ch
+    end
+  end 
+  clean_word
+end

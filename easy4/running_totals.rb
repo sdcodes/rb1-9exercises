@@ -9,6 +9,18 @@ def running_total(arr_of_integers)
   end 
   new_array
 end 
+
+#OTHER WAY
+
+def running_total(array_of_num)
+  counter = 0
+  sum_array = []
+  array_of_num.each do |num|
+    counter += num
+    sum_array << counter
+  end 
+  sum_array
+end 
     
 p running_total([2, 5, 13]) == [2, 7, 20]
 p running_total([14, 11, 7, 15, 20]) == [14, 25, 32, 47, 67]

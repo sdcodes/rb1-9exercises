@@ -1,6 +1,5 @@
 def word_cap(string)
   array_of_words = string.split
-  
   array_of_words.map do |char|
     char.capitalize!
   end 
@@ -25,3 +24,15 @@ def word_cap(string)
   end
   new_sentence.join(" ")
 end 
+
+
+# OTHER METHODS 
+
+def word_cap(original_string)
+  split_string = []
+  original_string.split(" ") do |word|
+    split_string << word.capitalize 
+  end 
+  split_string.join(" ")
+end 
+   

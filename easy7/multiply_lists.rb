@@ -9,6 +9,8 @@ def multiply_list(arr1, arr2)
   final_arr
 end 
 
+
+
 p multiply_list([3, 5, 7], [9, 10, 11]) == [27, 50, 77]
 
 p multiply_list_w_zip([3, 5, 7], [9, 10, 11]) == [27, 50, 77]
@@ -40,5 +42,16 @@ def multiply_list(arr1, arr2)
     new_array << item * arr2[index]
   end 
   new_array
+end 
+
+#OTHER METHOD
+
+def multiply_list(array1, array2)
+  array2_index = 0
+  array1.map do |num|
+    num = num * array2[array2_index]
+    array2_index += 1
+    num
+  end 
 end 
 

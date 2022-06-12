@@ -25,3 +25,16 @@ def halvsies(array)
     new_array = array[0, mid_num], array[mid_num, array.last]
   end
 end 
+
+# OTHER WAY
+
+def halvsies(original_array)
+  size_num_divide = (original_array.size / 2)
+  if original_array.empty?
+    divided_array = [], []
+  elsif original_array.size.even?
+    divided_array = original_array[0, size_num_divide],  [size_num_divide, size_num_divide]
+  elsif original_array.size.odd?
+   divided_array = original_array[0, (size_num_divide + 1)], original_array[(size_num_divide + 1), size_num_divide]
+  end 
+end 

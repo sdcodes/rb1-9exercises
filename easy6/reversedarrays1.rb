@@ -48,3 +48,16 @@ def reversed!(array)
   end 
   array
 end 
+
+# OTHER WAY
+
+
+def reversed!(list)
+  index = -1
+  list2 = list.dup
+  list.map! do |item|
+    new_num = list2[index]
+    index += -1
+    new_num
+  end 
+end 

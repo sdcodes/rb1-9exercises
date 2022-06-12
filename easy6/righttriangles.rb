@@ -1,4 +1,3 @@
-require 'pry'
 def triangle(integer)
   total_stars = "*"
 loop do 
@@ -7,6 +6,17 @@ loop do
     break if total_stars.size > integer
   end 
 end 
+
+#OTHER WAY
+
+def triangle(integer)
+  star = "*"
+  1.upto(integer) do |num|
+    puts (star * num).rjust(integer)
+  end 
+end 
+
+
  triangle(5)
  triangle(9)
 

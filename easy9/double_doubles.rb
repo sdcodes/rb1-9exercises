@@ -14,6 +14,17 @@ def twice(integer)
   end 
 end 
 
+# OTHER WAY
+
+def twice(integer)
+  return (integer * 2) if integer.to_s.size.odd?
+  mid_num = integer.to_s.size / 2
+  if integer.to_s[0, mid_num] == integer.to_s[mid_num, mid_num]
+    return integer
+  else 
+    integer * 2
+  end 
+end
 
 p twice(37) == 74
 p twice(44) == 44

@@ -23,6 +23,21 @@ def crunch(string)
   new_string
 end
 
+# OTHER WAY
+
+def crunch(string)
+ array_string = string.chars 
+ new_string = ""
+  array_string.each_with_index do |ch, index|
+    if ch == array_string[index + 1]
+      next 
+    else 
+      new_string << ch
+    end 
+  end 
+  new_string
+end 
+
 p crunch('ddaaiillyy ddoouubbllee') == 'daily double'
 p crunch('4444abcabccba') == '4abcabcba'
 p crunch('ggggggggggggggg') == 'g'

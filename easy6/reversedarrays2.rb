@@ -32,7 +32,19 @@ def reverse(list)
   end 
 end 
     
-    
+# OTHER WAY
+
+def reversed(list)
+ index = -1
+ reversed_list = []
+ return list if list.size <= 1
+ loop do 
+   reversed_list << list[index]
+   index += -1
+   break if -list.size > index
+ end
+ reversed_list
+end 
 
 p reverse([1,2,3,4]) == [4,3,2,1]          # => true
 p reverse(%w(a b e d c)) == %w(c d e b a)  # => true

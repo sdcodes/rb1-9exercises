@@ -21,6 +21,21 @@ def substrings(string)
     break if index >= string.size
   end 
   new_array.flatten
-end 
+end
+
+
+# OTHER WAY
+
+def substrings(original_string)
+  starting_index = 0
+  ending_index = original_string.size + 1
+  new_string_array = []
+  loop do 
+   new_string_array << leading_substrings(original_string[starting_index, ending_index])
+   starting_index += 1
+   break if starting_index == original_string.size
+  end
+  new_string_array.flatten
+end
 
 p substrings('abcde') 

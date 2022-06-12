@@ -1,4 +1,3 @@
-require 'pry'
 def get_grade(score1, score2, score3)
   grades = {"A" => 90..100, "B" => 80..89, "C" => 70..79, "D" => 60..69, "F" => 0..59}
   mean = (score1 + score2 + score3)/3
@@ -6,6 +5,20 @@ def get_grade(score1, score2, score3)
     return grade if score.include?(mean)
   end
 end 
+
+#OTHER METHOD
+
+def get_grade(grade1, grade2, grade3)
+  final_grade = (grade1 + grade2 + grade3) / 3
+  case final_grade
+    when 90..100 then "A"
+    when 80...90 then "B"
+    when 70...80 then "C"
+    when 60...70 then "D"
+    when  0...60 then "F"
+  end 
+end 
+
 
 #FURTHER EXPLORATIOM
 

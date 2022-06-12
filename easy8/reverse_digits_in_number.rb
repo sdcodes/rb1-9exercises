@@ -2,6 +2,13 @@ def reversed_number(num)
   num.to_s.reverse.to_i
 end 
 
+# OR WITH METHOD BELOW
+
+def reversed_number(original_integer)
+  original_integer.digits.join.to_i
+end
+
+
 p reversed_number(12345) == 54321
 p reversed_number(12213) == 31221
 p reversed_number(456) == 654

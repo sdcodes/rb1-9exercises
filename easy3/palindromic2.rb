@@ -40,3 +40,17 @@ def real_palindrome?(string)
   end 
   palindrome?(new_array.join.downcase)
 end 
+
+
+#OTHER WAY: 
+
+def real_palindrome?(string)
+  alphabet = "abcdefghijklmnopqrstuvwxyz"
+  only_alp_word = ""
+  string.chars do |ch|
+    if alphabet.include?(ch.downcase)
+      only_alp_word << ch.downcase
+    end 
+  end 
+  palindrome?(only_alp_word)
+end 

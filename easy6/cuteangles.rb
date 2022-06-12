@@ -65,4 +65,17 @@ def dms(number)
    d_arr.flatten!
    "#{d_arr[0]}" + DEGREE + sprintf("%02d", "#{d_arr[1]}") + MINUTE_SIGN + sprintf("%02d", "#{d_arr[2]}") + SECOND_SIGN
 end 
-#
+
+#OTHER WAY
+
+DEGREE = "\xC2\xB0"
+MINUTE = "'"
+SEC = "\""
+def dms(number)
+  degree_mins = number.divmod(1)
+  degree = degree_mins[0].to_s
+  minutes_secs = (degree_mins[-1] *= 60).divmod(1)
+  minutes = minutes_secs[0].to_s
+  seconds = (minutes_secs[-1] * 60).to_i.to_s
+  degree + DEGREE + sprintf("%02d", minutes) + MINUTE + sprintf("%02d", seconds) + SEC
+end 

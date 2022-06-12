@@ -8,6 +8,17 @@ def negative(integer)
   end 
 end 
 
+
+# OTHER WAY
+
+def negative(integer)
+  if integer.negative? || integer == 0
+    integer
+  else
+    -integer
+  end 
+end 
+
 p negative(5) == -5
 p negative(-3) == -3
 p negative(0) == 0  

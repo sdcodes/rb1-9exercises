@@ -1,4 +1,3 @@
-require 'pry'
 def sequence(num1, num2)
   new_array = []
   last_num = num1 * num2
@@ -18,6 +17,17 @@ def sequence(num1, num2)
 new_array
 end
     
+#OR OTHER WAY
+
+def sequence(count_num, first_num)
+  new_num = 0
+  new_sequence_array = []
+  count_num.times do |_|
+    new_num += first_num
+    new_sequence_array << new_num
+  end 
+  new_sequence_array
+end
 
 p sequence(5, 1) == [1, 2, 3, 4, 5]
 p sequence(4, -7) #== [-7, -14, -21, -28]

@@ -21,6 +21,22 @@ def evens(array)
   only_odds
 end 
     
+#OTHER WAYS
+
+def oddities(array)
+  new_array = []
+  array.each_with_index do |num, index|
+    new_array << num if index.even?
+  end 
+  new_array
+end
+
+
+def oddities(array)
+  array.select do |n|
+    array.index(n).even?
+  end 
+end
 
 
 p oddities([2, 3, 4, 5, 6]) 
@@ -41,12 +57,3 @@ p evens([])
 #if index is even, push into new array
 #return new array
 
-#OTHER WAY
-
-def oddities(array)
-  new_array = []
-  array.each_with_index do |num, index|
-    new_array << num if index.even?
-  end 
-  new_array
-end

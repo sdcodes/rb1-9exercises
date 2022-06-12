@@ -13,3 +13,19 @@ end
 end
 
 p anagram_h.values
+
+
+# ANOTHER WAY
+
+def group_anagrams(array_of_words) 
+  anagram_hash = {}
+  array_of_words.each do |word|
+    sorted_word = word.chars.sort.join
+    if anagram_hash.include?(sorted_word)
+      anagram_hash[sorted_word] << word
+    else
+      anagram_hash[sorted_word] = [word]
+    end 
+  end 
+  anagram_hash.values
+end 
