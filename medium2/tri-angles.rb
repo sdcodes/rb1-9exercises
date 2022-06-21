@@ -11,6 +11,23 @@ def triangle(d1, d2, d3)
   end 
 end 
 
+
+#OTHER WAY
+
+def triangle(a1, a2, a3)
+  all_angles = [a1, a2, a3]. sort
+  return :invalid if all_angles.sum != 180 ||
+                     all_angles.any? {|angle| angle <= 0}
+  if all_angles.one? {|angle| angle == 90}
+    :right
+  elsif all_angles.all? {|angle| angle < 90}
+    :acute
+  else
+    :obtuse
+  end 
+end
+
+
 p triangle(60, 70, 50) == :acute
 p triangle(30, 90, 60) == :right
 p triangle(120, 50, 10) == :obtuse

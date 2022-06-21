@@ -14,6 +14,25 @@ def block_word?(string)
   end 
    array == array.uniq ? true : false
 end 
+
+# OTHER WAY
+
+def block_word?(provided_word)
+  word_blocks = { ["B", "O"] => 0, ["X", "K"] => 0, ["D", "Q"] => 0, 
+                  ["C", "P"] => 0, ["N", "A"] => 0, ["G", "T"] => 0,
+                  ["R", "E"] => 0, ["F", "S"] => 0, ["J", "W"] => 0,
+                  ["H", "U"] => 0, ["V", "I"] => 0, ["L", "Y"] => 0,
+                  ["Z", "M"] => 0 }
+
+  provided_word.each_char do |ch|
+    word_blocks.each_pair do |key, value|
+      if key.include?(ch)
+        word_blocks[key] += 1
+      end 
+    end 
+  end 
+  word_blocks.all? {|key, value| value <= 1 }
+end 
       
 p block_word?('BATCH') 
 p block_word?('BUTCH') 

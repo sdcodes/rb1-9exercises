@@ -14,6 +14,24 @@ def rotate90(array)
   new_array
 end 
 
+# OTHER WAY
+
+def rotate90(matrix)
+  index = 0
+  new_matrix = []
+  size_of_matrix = (matrix.max_by {|subarray| subarray.count}).size
+  loop do 
+    new_row = []
+    matrix.reverse_each do |subarray|
+      new_row << subarray[index]
+    end
+    index += 1
+    new_matrix << new_row
+    break if new_matrix.size == size_of_matrix
+  end
+  new_matrix
+end 
+
 
 matrix1 = [ [1, 5, 8], [4, 7, 2], [3, 9, 6] ]
 

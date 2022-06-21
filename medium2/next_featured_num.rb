@@ -8,6 +8,19 @@ def featured(integer)
 end 
 end
 
+#OTHER METHOD
+
+def featured_num?(num)
+  num.odd? && num % 7 == 0 && num.to_s.chars == num.to_s.chars.uniq
+end 
+
+def featured(integer)
+  (integer + 1).upto(9_999_999_999) do |num|
+   return num if featured_num?(num)
+  end
+  return "Error! No higher featured number available!"
+end
+
 
 p featured(12) == 21
 p featured(12) == 21

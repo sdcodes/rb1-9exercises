@@ -8,6 +8,22 @@ def balanced?(string)
   parentheses.zero?
 end 
 
+#ANOTHER WAY
+
+def balanced?(original_string)
+  paren_string = ""
+  original_string.each_char do |ch|
+    if ch == "(" || ch == ")"
+      paren_string << ch
+    end
+  end 
+  loop do
+    paren_string.gsub!("()", "")
+    break if paren_string.size <= 1 || !paren_string.include?("()")
+  end
+  paren_string.empty?
+end 
+
 
  p balanced?('What (is) this?')
  p balanced?('((What) (is this))?')

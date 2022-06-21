@@ -24,6 +24,20 @@ def lights_on_off(n_of_lights)
   on_off(hash_lights)  
 end
 
+
+#OHER METHOD
+def lights_on(number_lights)
+  lights_hash = {}
+  (1..number_lights).each { |n| lights_hash[n] = false }
+  1.upto(number_lights) do |num|
+    lights_hash.each_pair do |key, value|
+      lights_hash[key] = !value if key % num == 0
+    end 
+  end
+  (lights_hash.select { |key, value| value == true }).keys
+end
+
+
 p lights_on_off(5)
 p lights_on_off(10)
 p lights_on_off(1000)   

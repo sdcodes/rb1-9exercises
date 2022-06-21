@@ -8,6 +8,18 @@ end
 sorted_list
 end 
 
+# OTHER WAY
+
+def merge(array1, array2)
+  total_array = array1 + array2
+  sorted_array = []
+  loop do 
+    sorted_array << total_array.delete_at(total_array.index(total_array.min))
+    break if total_array.empty?
+  end 
+  sorted_array
+end  
+
 a = [1, 4, 5, 3]
 b = [2, 6, 8]
 

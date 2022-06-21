@@ -41,6 +41,36 @@ def unegyptian(array_of_unit_denominators)
   Rational(array_of_unit_fractions.sum)
 end 
   
+  
+# OTHER METHOD 
+
+def egyptian(rational_number)
+  denominator = 2
+  unit_f_collection = []
+  if rational_number > 1
+    unit_f_collection << 1/1r
+    remainder = rational_number - 1/1r
+  else
+  remainder = rational_number
+  end 
+  loop do 
+    if remainder >= 1/denominator.to_r
+      unit_f_collection << 1/denominator.to_r
+      remainder = remainder - 1/denominator.to_r
+    end 
+    denominator += 1
+    break if unit_f_collection.sum == rational_number
+  end 
+  unit_f_collection.map { |n| n.denominator }
+end 
+  
+def unegyptian(denominators_arr)
+ unit_fractions = denominators_arr.map do |num|
+    1/num.to_r
+  end 
+  unit_fractions.sum.to_r
+end 
+
 p egyptian(Rational(2, 1))    # -> [1, 2, 3, 6]
 p egyptian(Rational(137, 60)) # -> [1, 2, 3, 4, 5]
 p egyptian(Rational(3, 1)) 

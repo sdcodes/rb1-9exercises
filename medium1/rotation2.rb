@@ -9,6 +9,20 @@ def rotate_rightmost_digits(integer, last_n)
   end 
 end 
 
+#ANOTHER WAY
+
+def rotate_rightmost_digits(integer, last_n_digit) 
+  nums_array = integer.to_s.chars
+  positive_index = nums_array.size - last_n_digit 
+  new_array = []
+  nums_array.each_with_index do |num, index|
+    if index != positive_index
+      new_array << num
+    end 
+  end 
+  (new_array.join + nums_array[positive_index]).to_i
+end
+
 
 
 
