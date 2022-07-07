@@ -28,3 +28,16 @@ def remove_vowels(string_w_vowels)
     new_word
   end 
 end 
+
+# OTHER WAY
+ def remove_vowels(array)
+  array.map do |word|
+    new_word = ""
+    word.each_char do |ch|
+      if !/[aeiouAEIOU]/.match(ch)
+        new_word << ch
+      end 
+    end 
+    new_word
+  end
+end

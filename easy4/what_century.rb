@@ -68,6 +68,32 @@ def century(year)
   ending_of_century(century)
 end 
 
+
+# OTHER WAY
+
+def century(integer)
+  end_part = integer.to_s[-2..-1]
+  begin_part = integer.to_s[0..(integer.to_s.size - 3)]
+  if end_part == "00"
+    century = begin_part
+  else 
+    century = (begin_part.to_i + 1).to_s
+  end 
+  if century.end_with?("12") || century.end_with?("13") ||
+     century.end_with?("11")
+       suffix = "th"
+  elsif century.end_with?("1")
+    suffix = "st"
+  elsif century.end_with?("2")
+    suffix = "nd"
+  elsif century.end_with?("3")
+    suffix = "rd"
+  else
+    suffix = "th"
+  end 
+  century + suffix
+end 
+
 p century(2000) 
 p century(2001) 
 p century(1965) 

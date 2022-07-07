@@ -22,6 +22,18 @@ def find_dup(original_array)
   end 
 end 
 
+# OTHER WAY
+def find_dup(array)
+  hash = {}
+  array.each do |n|
+    if hash.include?(n)
+      return n
+    else
+      hash[n] = 1
+    end 
+  end
+end 
+
     
 p find_dup([1, 5, 3, 1])
 p find_dup([18,  9, 36, 96, 31, 19, 73, 54, 75, 73, 42, 15,

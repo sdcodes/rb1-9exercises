@@ -38,3 +38,17 @@ def halvsies(original_array)
    divided_array = original_array[0, (size_num_divide + 1)], original_array[(size_num_divide + 1), size_num_divide]
   end 
 end 
+
+# OTHER METHOD
+def halvsies(array)
+  new_array = []
+  half = array.size/2
+  if array.size.even? 
+    new_array.push(array[0, half]).push(array[half, half])
+  else
+    large = (array.size.to_f/2).round(half: :up)
+    new_array.push(array[0, large]).push(array[large, half])
+  end 
+  new_array
+end
+

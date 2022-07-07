@@ -11,6 +11,23 @@ def before_midnight(stringed_time)
 end 
 
 
+# OTHER WAY
+
+def after_midnight(string)
+  return 0 if string == "24:00"
+  hour = string[0..1].to_i
+  minute = string[3..4].to_i
+  (hour * 60) + minute
+end 
+
+def before_midnight(string)
+  return 0 if string == "24:00"
+  hour = string[0..1].to_i
+  minute = string[3..4].to_i
+  720 - ((12 - hour) * 60) - minute
+end 
+
+
 p after_midnight('12:34') == 754
 p after_midnight('00:00') == 0
 p after_midnight('24:00') == 0

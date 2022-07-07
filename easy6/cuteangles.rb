@@ -79,3 +79,17 @@ def dms(number)
   seconds = (minutes_secs[-1] * 60).to_i.to_s
   degree + DEGREE + sprintf("%02d", minutes) + MINUTE + sprintf("%02d", seconds) + SEC
 end 
+
+
+# OTHER WAY
+
+DEGREE = "\xC2\xB0"
+
+def dms(number)
+  beginning = number.divmod(1)
+  degrees = beginning[0]
+  obtain_minutes = number.divmod(1)[1] * 60 
+  minutes = obtain_minutes.divmod(1)[0]
+  seconds = (obtain_minutes.divmod(1)[1] * 60).to_i 
+  degrees.to_s + DEGREE + sprintf("%02d", minutes) + "'" + sprintf("%02d", seconds) + '"'  
+end

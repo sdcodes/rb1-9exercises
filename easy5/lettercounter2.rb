@@ -47,6 +47,22 @@ def word_sizes(original_string)
   end 
   count_hash
 end 
+
+# OTHER WAY
+def word_sizes(string)
+  count_hash = {}
+  string.split do |word|
+    letters_only = ""
+    word.each_char {|ch| letters_only << ch if /[a-zA-Z]/.match?(ch)}
+    if count_hash.include?(letters_only.size)
+      count_hash[letters_only.size] += 1
+    else
+      count_hash[letters_only.size] = 1
+    end
+  end 
+  count_hash
+end
+
   
 p word_sizes('Four score and seven.')
 p word_sizes('Hey diddle diddle, the cat and the fiddle!')

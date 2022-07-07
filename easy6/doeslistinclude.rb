@@ -18,6 +18,14 @@ def include?(original_array, value)
   end 
   includes == true ? true : false
 end 
+
+# OTHER WAY
+def included?(array, num)
+  array.each do |n|
+    return true if n == num
+  end 
+  false
+end 
   
 p does_include?([1,2,3,4,5], 3) == true
 p does_include?([1,2,3,4,5], 6) == false

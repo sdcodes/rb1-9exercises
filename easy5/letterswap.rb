@@ -37,6 +37,27 @@ def swap(original_string)
 end
 
 
+# OTHER WAY
+def swap(string)
+  new_string = []
+  string.split(" ").each do |word|
+    new_word = ""
+    word.chars.each_with_index do |ch, index|
+      if index == 0
+        new_word << word[-1] 
+      elsif index == word.size - 1
+        new_word << word[0]
+      else
+        new_word << ch
+      end 
+    end
+    new_string << new_word
+  end 
+  new_string.join(" ")
+end 
+
+
+
  p swap('Abcde') == 'ebcdA'
  p swap('Oh what a wonderful day it is') == 'hO thaw a londerfuw yad ti si'
  p swap('a') == 'a'

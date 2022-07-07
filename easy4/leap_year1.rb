@@ -10,6 +10,18 @@ def leap_year?(year)
   end
 end 
 
+# OTHER METHOD
+
+def leap_year?(year)
+  if year % 400 == 0
+     true
+  elsif year % 4 == 0 && year % 100 != 0
+     true
+  else
+     false
+  end 
+end
+
   
 p leap_year?(2016) 
 p leap_year?(2015) 

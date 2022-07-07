@@ -10,6 +10,21 @@ def leap_year?(year)
   end
 end 
 
+# OTHER WAY
+
+def leap_year?(year)
+  if year > 1752
+    if year % 400 == 0
+       return true
+    elsif year % 4 == 0 && year % 100 != 0
+      return true
+    end
+  else 
+    return true if year % 4 == 0
+  end 
+  false
+end 
+
 p leap_year?(2016) # == true
 p leap_year?(2015) #== false
 p leap_year?(2100) #== false
